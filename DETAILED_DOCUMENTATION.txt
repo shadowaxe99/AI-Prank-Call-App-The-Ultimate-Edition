@@ -1,0 +1,21 @@
+A detailed comparison between the two folders revealed that they are almost identical.
+The only difference lies in the 'wsgi.py' file located in the 'config' subfolder.
+
+Line-by-line differences in 'wsgi.py':
+  import os
+
+- 
+
+  from django.core.wsgi import get_wsgi_application
+
+  
+
+  os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
+
+- 
+
+  application = get_wsgi_application()
+
+To create the 'best' version of the folder, the following steps were taken:
+1. The entire first folder was copied as the base.
+2. The alternative version of 'wsgi.py' from the second folder was included and renamed to 'wsgi_alternative.py'.
