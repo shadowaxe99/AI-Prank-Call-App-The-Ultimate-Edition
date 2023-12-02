@@ -1,9 +1,17 @@
+from django.db import models
+
 class PrankCall(models.Model):
     caller_name = models.CharField(max_length=100)
     caller_number = models.CharField(max_length=20)
     target_number = models.CharField(max_length=20)
     prank_message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+    STATUS_CHOICES = [
+        ('success', 'Success'),
+        ('failed', 'Failed'),
+        ('pending', 'Pending'),
+    ]
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='pending')
 
     def __str__(self):
         return self.caller_name

@@ -1,3 +1,6 @@
+import os
+from pathlib import Path
+
 SECRET_KEY = 'your_secret_key'
 
 DEBUG = True
@@ -75,3 +78,5 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+
+ELEVEN_LABS_API_KEY = os.environ.get('ELEVEN_LABS_API_KEY')
